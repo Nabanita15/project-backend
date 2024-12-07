@@ -1,10 +1,10 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { Validator } = require("node-input-validator"); 
-const userdb=require("../models/userschema") 
+const { Validator } = require("node-input-validator");
+const userdb = require("../models/userschema");
 require("dotenv").config();
 
-const secretKey = process.env.MY_KEY; 
+const secretKey = process.env.MY_KEY;
 
 module.exports = {
   signup: async (req, res) => {
@@ -16,8 +16,8 @@ module.exports = {
         email: "required|email",
         countryCode: "required|string",
         phoneNumber: "required|string",
-        password: "required|string|minLength:6",
-        confirmpassword: "required|string|minLength:6",
+        password: "required|string",
+        confirmpassword: "required|string",
         dateOfBirth: "required|date",
         gender: "required|string",
       });
